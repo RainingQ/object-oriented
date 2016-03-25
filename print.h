@@ -7,8 +7,8 @@ using namespace std;
 
 class Print
 {
-public:
-	void printQueue(queue<string> m_q);
+	public:
+		void printQueue(queue<string> m_q);
 };
 
 #endif
