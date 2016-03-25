@@ -7,7 +7,7 @@ using namespace std;
 
 void Print::printQueue(queue<string> m_q)
 {
-	while(!m_q.empty())		//µ÷ÓÃ<queue>ÖÐ×Ô´øµÄº¯Êý£¬½«ÔªËØµ¯³ö£¬Ö±ÖÁ¶ÓÁÐÎª¿Õ
+	while(!m_q.empty())	//è°ƒç”¨<queue>ä¸­è‡ªå¸¦çš„å‡½æ•°ï¼Œå°†å…ƒç´ å¼¹å‡ºï¼Œç›´è‡³é˜Ÿåˆ—ä¸ºç©º
 	{
 		cout << m_q.front() << endl;
 		m_q.pop();
