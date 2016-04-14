@@ -2,6 +2,7 @@
 #include "calculation.h" 
 #include<iostream>
 #include<string>
+#include<string.h>
 #include<queue>
 using namespace std;
 
@@ -10,15 +11,16 @@ int main(int argc, char* argv[])
 	Scan in;
 	
 	Calculation cal;
-
+	
 	string input;
 	
-	//将传入表达式值赋给input 
-	if(argv[1] == "-a")
+	//将传入表达式赋给input 
+	if(strcmp(argv[1], "-a") == 0)
 	{
 		cout << argv[2] << "= ";
 		input = argv[2];
 	} 
+	
 	else
 	{
 		input = argv[1];

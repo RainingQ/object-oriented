@@ -58,13 +58,14 @@ queue<string> Scan::ToStringQueue(string input)
 	{
 		if (input[i] == 45 || input[i] == 47 || (input[i] < 44 && input[i] > 39))
 		{	
-			//当运算符左端出现数字，代表上一串数字序列已经结束，这时把这个数字串推入序列 
+			//运算符左端出现数字，则上一串数字序列已经结束，把这个数字串推入序列 
 			if (input[i-1] > 47 && input[i-1] < 58)
 			{
 				
+				//将多个数字字符组成一个连续的字符串
 				for (int j = i - 1; numberLen > 0; j--, numberLen--)
 				{
-					numbers = input[j] + numbers;    //将多个数字字符组成一个连续的字符串
+					numbers = input[j] + numbers;
 				}
 
 				m_q.push(numbers);
@@ -90,7 +91,7 @@ queue<string> Scan::ToStringQueue(string input)
 
 		}
 
-		else if (input[i] > 47 && input[i] < 58 || input[i] == '.')   //小数点需参与计数 
+		else if (input[i] > 47 && input[i] < 58 || input[i] == '.') 
 		{
 			numberLen++;
 

@@ -56,14 +56,14 @@ void Calculation::getQueue(queue<string> m_q)
 	//用于存放被加数、被减数、被乘数、被除数
 	double num1;
 	
-	//用于存放加数、减数、乘数、除数		
+	//用于存放加数、减数、乘数、除数
 	double num2;
 	
 	//用于存放由于优先级较小，需暂时先弹出的值，以及压栈时的临时变量 
 	double tempNum;	
 	
-	//用于存放由于优先级较小，需暂时先弹出的运算符，以及压栈时的临时变量	
-	string tempOper;	 
+	//用于存放由于优先级较小，需暂时先弹出的运算符，以及压栈时的临时变量 
+	string tempOper;
 		
 	while(!m_q.empty())
 	{		
@@ -163,7 +163,8 @@ void Calculation::getQueue(queue<string> m_q)
 			tempOper = m_staOper.top();
 			m_staOper.pop();
 		
-			if(m_staOper.empty() || priority(tempOper, m_staOper.top()) == tempOper)
+			if(m_staOper.empty()
+			   || priority(tempOper, m_staOper.top()) == tempOper)
 			{
 				num2 = m_staNum.top();
 				m_staNum.pop();
@@ -173,7 +174,8 @@ void Calculation::getQueue(queue<string> m_q)
 				calculate(tempOper, num1, num2);
 			}
 			
-			else if(!(m_staOper.empty()) && priority(tempOper, m_staOper.top()) == m_staOper.top())
+			else if(!(m_staOper.empty())
+			   		&& priority(tempOper, m_staOper.top()) == m_staOper.top())
 			{
 				tempOper = m_staOper.top();
 				m_staOper.pop();
